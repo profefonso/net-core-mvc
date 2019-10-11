@@ -8,7 +8,7 @@ using App_netcore.Data;
 
 namespace App_netcore.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/contacto")]
     [ApiController]
     public class ApiController : ControllerBase
     {
@@ -19,11 +19,21 @@ namespace App_netcore.Controllers
             _context = context;
         }
 
-        // POST: api/Api
         [HttpPost]
-        public async Task<ActionResult<ContactoApi>> PostContactoApi(ContactoApi item)
+        public async Task<ActionResult<ContactoViewModel>> PostContactoApi(ContactoViewModel contacto)
         {
+            if (ModelState.IsValid)
+            {
+                return Ok();
+            }
 
+            return BadRequest();
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> GetContacto()
+        {
+           
             return Ok();
         }
     }
