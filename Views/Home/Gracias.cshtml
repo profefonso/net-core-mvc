@@ -1,0 +1,15 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "App";
+}
+<div class="card" style="width: 40rem;">
+  <div class="card-body">
+    <h5 class="card-title">Gracias Por Su Valioso Tiempo</h5>
+    <p class="card-text">Seguimos creciendo gracias a tu aporte!!!.</p>
+    <p class="card-text"><small class="text-muted">Formulario enviado con exito</small></p>
+  </div>
+  <img src="~/img/gracias.jpg" class="card-img-top" alt="Gracias">
+</div>

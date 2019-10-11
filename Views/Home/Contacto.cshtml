@@ -1,0 +1,42 @@
+@{
+    ViewData["Title"] = "Login";
+}
+@model ContactoViewModel
+<form asp-controller="Home" asp-action="Contacto" method="post">
+    <center>
+        <div class="card text-white bg-dark mb-3" style="width: 32rem;">
+                    <div class="card-header">Formulario</div>
+                    <div class="card-body">
+                        <br />
+                        <div class="form-group text-left">
+                            <label asp-for="Input.Email"></label>
+                            <input asp-for="Input.Email" class="form-control" />
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group text-left">
+                            <label asp-for="Input.Telefono"></label>
+                            <input asp-for="Input.Telefono" class="form-control" />
+                            <span asp-validation-for="Input.Telefono" class="text-danger"></span>
+                        </div>
+                        <div class="form-group text-left">
+                            <label asp-for="Input.Edad"></label>
+                            <input type="number" asp-for="Input.Edad" class="form-control" />
+                            <span asp-validation-for="Input.Edad" class="text-danger"></span>
+                        </div>
+                        <div class="form-group text-left">
+                            <label asp-for="Input.Comentario"></label>
+                            <textarea rows="4" asp-for="Input.Comentario" class="form-control"></textarea>
+                            <span asp-validation-for="Input.Comentario" class="text-danger"></span>
+                        </div>
+                        <div class="card-footer bg-transparent border-success">
+                            <button type="submit" class="btn btn-primary">Ingresar</button>
+                        </div>
+                    </div>
+                    <label id="indexMessage" class="error">@Html.DisplayFor(o => o.ErrorMessage)</label>
+        </div>
+    </center>
+</form>
+
+@section Scripts{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

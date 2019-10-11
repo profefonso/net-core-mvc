@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "App";
+}
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="card text-center">
+  <div class="card-header">
+    @User.Identity.Name
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Hola de Nuevo</h5>
+    <p class="card-text">Para completar el formulrio de click en el botón.</p>
+    <a asp-area="" asp-controller="Home" asp-action="Contacto" class="btn btn-primary">Formulario Contacto</a>
+  </div>
+</div>
+    }
+else
+{
+<div class="jumbotron">
+  <h1 class="display-4">Bienvenido!</h1>
+  <p class="lead">Para completar el formulario de contacto por favor ingrese sus credenciales en Login.</p>
+  <table class="table table-dark" style="width: 10%;" >
+  <tbody>
+    <tr>
+      <th scope="col">Usuario:</th>
+      <td scope="col">demos@demo.com</td>
+    </tr>
+    <tr>
+      <th scope="col">Password:</th>
+      <td scope="col">123456</td>
+    </tr>
+  </tbody>
+</table>
+  <hr class="my-4">
+  <a class="btn btn-primary btn-lg" asp-area="Identity" asp-page="/Account/Login" role="button">Login</a>
+</div>
+}
