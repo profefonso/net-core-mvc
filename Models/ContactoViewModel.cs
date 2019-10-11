@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
+using App_netcore.Models;
 
 namespace App_netcore.Models
 {
